@@ -2,16 +2,30 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Write your HTML in here -->
+    <div id="appslideshow">
+      <div id="imageContainer">
+        <img width="500px" id="imagesApp" src="" alt="" />
+      </div>
+      <div id="controls">
+        <button class="button" id="autoback">Autoback</button
+        ><button class="button" id="back">Back</button
+        ><button class="button" id="stop" disabled="disabled">Stop</button
+        ><button class="button" id="forward">Forward</button
+        ><button class="button" id="autoforward">Autoforward</button>
+        <div>
+          <label for="uiSeconds">Interval in seconds:</label>
+          <input value="5" id="uiSeconds" name="uiSeconds" type="text" /><button
+            onclick="setUi()"
+            id="setUi"
+          >
+            Set
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="slideshow.js"></script>
   </body>
 </html>

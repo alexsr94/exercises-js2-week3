@@ -57,11 +57,41 @@ var movies = [
     haveWatched: false,
   },
 ];
+var myMovies = {
+  title: "Novecento",
+  director: "Bernardo Bertolucci",
+  type: "Drama",
+  haveWatched: true,
+};
 
 // create showMovies function
+function showMovies(param) {
+  param.forEach(function (x) {
+    let node = document.createElement("p");
+    document.querySelector("#all-movies").appendChild(node);
+    node.innerText = x.title + "-" + x.director + ". ";
+    document.getElementById("movies-number").innerText = param.length;
+  });
+}
 
-
+setTimeout(function () {
+  showMovies(movies);
+}, 1000);
 // create a new movie object for your favorite movie
-
+function addMovies(param) {
+  movies.push(param);
+}
+setTimeout(function () {
+  addMovies(myMovies);
+}, 2000);
 
 // create addMovies function
+document.getElementById("submitedMovie").addEventListener("click",function(){addMovieByForm});
+
+export function addMovieByForm(){
+  let node=document.createElement("p");
+  document.querySelector("#all-movies").appendChild(node);
+  node.innerText = document.getElementById("title").value; +"-" + document.getElementById("director").value;
+
+
+}
